@@ -15,7 +15,7 @@
 void setup(){}
 
 // Create bool so loop will end 
-bool running = true, loopProgram = false;
+bool running = true, loopProgram = true;
 void loop()
 {
 	if (running)
