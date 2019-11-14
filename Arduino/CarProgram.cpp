@@ -1,7 +1,7 @@
-#include "Car.h"
+#include "CarProgram.h"
 #include <Arduino.h>
 
-Car::Car(int passPWM, int passFor, int passRev, int passMax, int drivPWM, int drivFor, int drivRev, int drivMax)
+CarProgram::CarProgram(int passPWM, int passFor, int passRev, int passMax, int drivPWM, int drivFor, int drivRev, int drivMax)
 {
     passP = passPWM;
     passF = passFor;
@@ -21,13 +21,13 @@ Car::Car(int passPWM, int passFor, int passRev, int passMax, int drivPWM, int dr
     pinMode(drivR, OUTPUT);
 }
 
-void Car::RunInstruction(Instructions instructions)
+void CarProgram::RunInstruction(Instructions instructions)
 {
     ActivateMotors(instructions);
     Drive(instructions);
 }
 
-void Car::ActivateMotors(Instructions instructions)
+void CarProgram::ActivateMotors(Instructions instructions)
 {
     // Activate or Deativate passenger motor based on motor power (+ or -)
     if (instructions.pmp > 0)
@@ -68,7 +68,7 @@ void Car::ActivateMotors(Instructions instructions)
     }
 }
 
-void Car::Drive(Instructions instructions)
+void CarProgram::Drive(Instructions instructions)
 {
     // Motor acceleration
     for (int i(instructions.rsv); i < instructions.ruev; i++)
@@ -90,7 +90,7 @@ void Car::Drive(Instructions instructions)
     }
 }
 
-void Car::Shutdown()
+void CarProgram::Shutdown()
 {
     digitalWrite(passF, LOW);
     digitalWrite(passR, LOW);
@@ -98,7 +98,7 @@ void Car::Shutdown()
     digitalWrite(drivR, LOW);
 }
 
-void Car::motor_run(int pin, int PWM, int PWMMax)
+void CarProgram::motor_run(int pin, int PWM, int PWMMax)
 {
     if (PWM > PWMMax)
     {

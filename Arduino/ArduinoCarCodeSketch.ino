@@ -1,5 +1,4 @@
-#include "Car.h"
-//#include "libraries/Instructions.h"
+#include "CarProgram.h"
 
 #define PassPWM 9   // pin for the passenger PWM signal 0->255.  This is proportional to the speed of the tire
 #define PassFor 8   // pin to enable passenger tire forward (LOW off, HIGH forward)
@@ -20,14 +19,12 @@ void loop()
 {
 	if (running)
 	{
-		Car car = Car(PassPWM, PassFor, PassRev, PassMax, DrivPWM, DrivFor, DrivRev, DrivMax);
+		CarProgram car = CarProgram(PassPWM, PassFor, PassRev, PassMax, DrivPWM, DrivFor, DrivRev, DrivMax);
 		Instructions F1 = Instructions(2000, 1, 0, 255, 0, 1);
 		Instructions F2 = Instructions(1000, 1, 100, 255, 100, 1, 100, 255);
 		Instructions SHUTDOWN = Instructions(0, 0, 0, 0, 0, 0, 0, 0);
 
 		car.RunInstruction(F1);
-
-
 		
 		car.RunInstruction(SHUTDOWN);
 
