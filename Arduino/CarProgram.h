@@ -11,10 +11,10 @@
 
 #include "Instructions.h"
 
-class Car
+class CarProgram
 {
   public:
-    Car(int passPWM, int passFor, int passRev, int passMax, int drivPWM, int drivFor, int drivRev, int drivMax);
+    CarProgram(int passPWM, int passFor, int passRev, int passMax, int drivPWM, int drivFor, int drivRev, int drivMax);
 
     void RunInstruction(Instructions);
 
