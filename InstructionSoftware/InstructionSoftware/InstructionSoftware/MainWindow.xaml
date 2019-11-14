@@ -24,20 +24,21 @@
                 Show Message
             </Button>
         </StackPanel>
-        <StatusBar x:Name="statusbar" Grid.Row="2" Grid.ColumnSpan="4" Height="20" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" MaxHeight="22"/>
+        <StatusBar Grid.Row="2" Grid.ColumnSpan="4" Height="20" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" MaxHeight="22"/>
         <DockPanel Grid.ColumnSpan="4" Margin="0,0,0,0" Grid.RowSpan="3">
             <Menu DockPanel.Dock="Top" Height="20" Margin="0,0,0,0" VerticalAlignment="Top">
                 <MenuItem Header="_File">
-                    <MenuItem Header="Open"/>
+                    <MenuItem Header="_New"/>
+                    <MenuItem Header="_Open"/>
                     <MenuItem Header="_Save">
                         <MenuItem.Icon>
                             <Image Source="/icons/save2.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem x:Name="btnExit" Header="_Exit" Command="{Binding ShutdownApplicationCommand}"/>
+                    <MenuItem Header="_Exit" Command="{Binding ShutdownApplicationCommand}"/>
 
                 </MenuItem>
-                <MenuItem x:Name="btnEdit" Header="_Edit">
+                <MenuItem Header="_Edit">
                     <MenuItem Header="_Undo"/>
                     <MenuItem Header="_Redo"/>
                     <MenuItem Header="_Copy"/>

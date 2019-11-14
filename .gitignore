@@ -9,3 +9,7 @@
 *.lref
 *.iref
 *.cache
+*.baml
+*.pdp
+*.dll
+*.pdb
