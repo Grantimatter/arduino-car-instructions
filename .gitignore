@@ -5,3 +5,7 @@
 *.jpg
 *.jpeg
 *.ico
+*.csproj
+*.lref
+*.iref
+*.cache
