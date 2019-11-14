@@ -1,1 +1,11 @@
-.vscode/
+*.vs
+*.vscode
+*.sln
+*.png
+*.jpg
+*.jpeg
+*.ico
+*.csproj
+*.lref
+*.iref
+*.cache

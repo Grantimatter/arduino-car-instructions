@@ -1,14 +1,6 @@
 #include "Car.h"
 #include <Arduino.h>
 
-/*
-void Car::Initialize()
-{
-    // Don't change this part.  It needs to be here to set up the pins for output later.
-   
-}
-*/
-
 Car::Car(int passPWM, int passFor, int passRev, int passMax, int drivPWM, int drivFor, int drivRev, int drivMax)
 {
     passP = passPWM;
