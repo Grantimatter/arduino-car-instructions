@@ -15,3 +15,5 @@ A:\git\GitHub\arduino-car-instructions\InstructionSoftware\InstructionSoftware\I
 A:\git\GitHub\arduino-car-instructions\InstructionSoftware\InstructionSoftware\InstructionSoftware\obj\Debug\netcoreapp3.0\InstructionSoftware.AssemblyInfo.cs
 A:\git\GitHub\arduino-car-instructions\InstructionSoftware\InstructionSoftware\InstructionSoftware\obj\Debug\netcoreapp3.0\InstructionSoftware.dll
 A:\git\GitHub\arduino-car-instructions\InstructionSoftware\InstructionSoftware\InstructionSoftware\obj\Debug\netcoreapp3.0\InstructionSoftware.pdb
+A:\git\GitHub\arduino-car-instructions\InstructionSoftware\InstructionSoftware\InstructionSoftware\obj\Debug\netcoreapp3.0\InstructionSoftware_Content.g.cs
+A:\git\GitHub\arduino-car-instructions\InstructionSoftware\InstructionSoftware\InstructionSoftware\bin\Debug\netcoreapp3.0\icons\save2.png

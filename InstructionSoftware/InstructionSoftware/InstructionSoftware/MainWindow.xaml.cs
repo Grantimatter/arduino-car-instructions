@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InstructionSoftware.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace InstructionSoftware
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MessageViewModel();
+            DataContext = new CloseAppViewModel();
+        }
+
+        void OnClickExit(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

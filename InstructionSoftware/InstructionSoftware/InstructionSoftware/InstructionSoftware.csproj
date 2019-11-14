@@ -4,7 +4,17 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>kissclipart_arduino_logo_png_clipart_arduino_starter_kit_k0000_71cedd3a2fcbfa0f_A1x_icon.ico</ApplicationIcon>
+    <ApplicationIcon>icons\arduino_icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="icons\save2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icons\save2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
 </Project>
