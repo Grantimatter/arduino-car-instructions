@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.0": []
   },
   "packageFolders": {
-    "C:\\Users\\gwisw\\.nuget\\packages\\": {},
-    "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Grant-Laptop\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\git\\GitHub\\arduino-car-instructions\\InstructionSoftware\\InstructionSoftware\\InstructionSoftware\\InstructionSoftware.csproj",
+      "projectUniqueName": "C:\\Users\\Grant-Laptop\\Google Drive\\School\\Engineering\\Intro to Engineering\\Final Project\\Arduino Code\\ArduinoCarCodeSketch\\InstructionSoftware\\InstructionSoftware\\InstructionSoftware\\InstructionSoftware.csproj",
       "projectName": "InstructionSoftware",
-      "projectPath": "A:\\git\\GitHub\\arduino-car-instructions\\InstructionSoftware\\InstructionSoftware\\InstructionSoftware\\InstructionSoftware.csproj",
-      "packagesPath": "C:\\Users\\gwisw\\.nuget\\packages\\",
-      "outputPath": "A:\\git\\GitHub\\arduino-car-instructions\\InstructionSoftware\\InstructionSoftware\\InstructionSoftware\\obj\\",
+      "projectPath": "C:\\Users\\Grant-Laptop\\Google Drive\\School\\Engineering\\Intro to Engineering\\Final Project\\Arduino Code\\ArduinoCarCodeSketch\\InstructionSoftware\\InstructionSoftware\\InstructionSoftware\\InstructionSoftware.csproj",
+      "packagesPath": "C:\\Users\\Grant-Laptop\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Grant-Laptop\\Google Drive\\School\\Engineering\\Intro to Engineering\\Final Project\\Arduino Code\\ArduinoCarCodeSketch\\InstructionSoftware\\InstructionSoftware\\InstructionSoftware\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\gwisw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Grant-Laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -65,7 +65,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
