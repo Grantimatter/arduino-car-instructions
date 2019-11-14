@@ -24,13 +24,7 @@ namespace InstructionSoftware
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MessageViewModel();
-            DataContext = new CloseAppViewModel();
-        }
-
-        void OnClickExit(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
+            DataContext = new MainWindowViewModel();
         }
     }
 }

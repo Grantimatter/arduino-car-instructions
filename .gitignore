@@ -11,3 +11,9 @@
 *.pdp
 *.dll
 *.pdb
+*.exe
+/bin
+/obj
+/release
+/Debug
+bin

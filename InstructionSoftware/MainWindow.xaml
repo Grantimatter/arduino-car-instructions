@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InstructionSoftware"
         mc:Ignorable="d"
-        Title="Arduino Programmer" Height="450" Width="800">
+        Title="Carduino" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -18,9 +18,9 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <StackPanel VerticalAlignment="Bottom">
+        <StackPanel VerticalAlignment="Center" Grid.RowSpan="3" Grid.ColumnSpan="4" Width="400" Margin="0,0,0,0" >
             <TextBox x:Name="messageBox"/>
-            <Button Command="{Binding DisplayMessageCommand}" CommandParameter="{Binding ElementName=messageBox, Path=Text}">
+            <Button Command="{Binding DisplayMessageCommand}" CommandParameter="{Binding ElementName=messageBox, Path=Text}" VerticalAlignment="Center" HorizontalAlignment="Center" > 
                 Show Message
             </Button>
         </StackPanel>
@@ -35,7 +35,7 @@
                             <Image Source="/icons/save2.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="_Exit" Command="{Binding ShutdownApplicationCommand}"/>
+                    <MenuItem Header="_Exit" Command="{Binding CloseAppCommand}"/>
 
                 </MenuItem>
                 <MenuItem Header="_Edit">
@@ -45,9 +45,8 @@
                     <MenuItem Header="_Paste"/>
                 </MenuItem>
                 <MenuItem Header="_View">
-                    <MenuItem x:Name="btnView" Header="_Layout">
-                        
-                    </MenuItem>
+                    <MenuItem Header="_Theme"/>
+                    <MenuItem Header="_Layout"/>
                 </MenuItem>
                 
             </Menu>

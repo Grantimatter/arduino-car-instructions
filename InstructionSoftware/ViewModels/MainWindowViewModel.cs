@@ -6,18 +6,25 @@ using System.Windows;
 
 namespace InstructionSoftware.ViewModels
 {
-    public class MessageViewModel
+    public class MainWindowViewModel
     {
         public MessageCommand DisplayMessageCommand { get; private set; }
+        public CloseAppCommand CloseAppCommand { get; private set; }
 
-        public MessageViewModel()
+        public MainWindowViewModel()
         {
             DisplayMessageCommand = new MessageCommand(DisplayMessage);
+            CloseAppCommand = new CloseAppCommand(ShutdownApp);
         }
 
         public void DisplayMessage(string message)
         {
             MessageBox.Show(message);
+        }
+
+        public void ShutdownApp()
+        {
+            Application.Current.Shutdown();
         }
     }
 }

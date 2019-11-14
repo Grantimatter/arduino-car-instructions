@@ -7,14 +7,4 @@
     <ApplicationIcon>icons\arduino_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="icons\save2.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="icons\save2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
 </Project>
