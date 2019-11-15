@@ -1,18 +1,7 @@
-*.vs
-*.vscode
-*.png
-*.jpg
-*.jpeg
-*.ico
-*.lref
-*.iref
-*.cache
-*.baml
-*.pdp
-*.dll
-*.pdb
-*.exe
-Release
-Debug
+# Filetypes to ignore
+*.user
+*.suo
+
+# Folders to ignore
 bin
 obj
