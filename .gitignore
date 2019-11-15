@@ -12,8 +12,7 @@
 *.dll
 *.pdb
 *.exe
-/bin
-/obj
-/release
-/Debug
+Release
+Debug
 bin
+obj
