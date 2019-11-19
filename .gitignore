@@ -1,7 +1,11 @@
 # Filetypes to ignore
 *.user
 *.suo
+*.ide
+*.dtbcache
 
 # Folders to ignore
 bin
 obj
+.vs
+.vscode
