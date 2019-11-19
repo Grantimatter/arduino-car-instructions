@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InstructionSoftware"
         mc:Ignorable="d"
-        Title="Carduino" Height="450" Width="800">
+        Title="Carduino" Height="450" Width="800" MinHeight="240" MinWidth="360">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -15,11 +15,11 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <!--<StackPanel VerticalAlignment="Center" Grid.ColumnSpan="3" Width="300" Grid.Column="1" Grid.Row="2" Margin="90,0,90,0" >
             <TextBox x:Name="messageBox"/>
@@ -59,10 +59,31 @@
                 </MenuItem>
             </Menu>
         </DockPanel>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.ColumnSpan="6" Grid.RowSpan="5" Margin="0,60,0,20">
-            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
-                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20"> Scrolling is enabled when nexessary. Resize the window, making it larger and smaller</TextBlock>
-                <Rectangle Fill="Red" Width="500" Height="500"></Rectangle>
+        <DockPanel Grid.Row="1" Grid.ColumnSpan="6" Margin="0,0,0,90">
+            <Button Content="+" HorizontalAlignment="Right" Width="30" Height="30" Margin="0,0,10,0"/>
+        </DockPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.ColumnSpan="6" Grid.RowSpan="5" Margin="0,60,0,20" HorizontalAlignment="Stretch" Background="Beige">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                <!--<TextBlock TextWrapping="Wrap" Margin="0,0,0,20"> Scrolling is enabled when nexessary. Resize the window, making it larger and smaller</TextBlock>!-->
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
+                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
+                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
+                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
+                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
+                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
+                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
+                </StackPanel>
+                <!--<Rectangle Fill="AliceBlue" Width="500" Height="1000"></Rectangle>!-->
             </StackPanel>
         </ScrollViewer>
     </Grid>
