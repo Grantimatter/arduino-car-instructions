@@ -60,28 +60,29 @@
             </Menu>
         </DockPanel>
         <DockPanel Grid.Row="1" Grid.ColumnSpan="6" Margin="0,0,0,90">
-            <Button Content="+" HorizontalAlignment="Right" Width="30" Height="30" Margin="0,0,10,0"/>
+            <Button Content="+" HorizontalAlignment="Right" Width="30" Height="30" Margin="0,2,10,2"/>
         </DockPanel>
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.ColumnSpan="6" Grid.RowSpan="5" Margin="0,60,0,20" HorizontalAlignment="Stretch" Background="Beige">
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
                 <!--<TextBlock TextWrapping="Wrap" Margin="0,0,0,20"> Scrolling is enabled when nexessary. Resize the window, making it larger and smaller</TextBlock>!-->
-                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
-                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </StackPanel>
+                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
+                    <Rectangle Fill="Maroon" VerticalAlignment="Center" HorizontalAlignment="Left" Height="40" Width="40"  Margin="5,5,0,5"/>
+                    <Label Content="Instruction 1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-40,0,0,0"/>
+                </DockPanel>
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
-                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
-                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
-                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
+                    <Label Content="Instruction 2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
-                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
+                    <Label Content="Instruction 3" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
-                    <Label Content="LABEL" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
+                    <Label Content="Instruction 4" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
+                    <Label Content="Instruction 5" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
+                    <Label Content="Instruction 6" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
                 </StackPanel>
                 <!--<Rectangle Fill="AliceBlue" Width="500" Height="1000"></Rectangle>!-->
             </StackPanel>
