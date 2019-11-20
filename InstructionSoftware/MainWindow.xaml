@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:InstructionSoftware.User_Controls"
         xmlns:local="clr-namespace:InstructionSoftware"
         mc:Ignorable="d"
         Title="Carduino" Height="450" Width="800" MinHeight="240" MinWidth="360">
-    <Grid>
+    <Grid Name="MainGrid" SizeChanged="MainGrid_SizeChanged">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
@@ -27,6 +28,8 @@
                 Show Message
             </Button>
         </StackPanel>!-->
+
+
         <StatusBar Grid.Row="5" Grid.ColumnSpan="5" Height="20" VerticalAlignment="Bottom" MaxHeight="20" MinHeight="20">
             <StatusBarItem Content="filename.car" HorizontalAlignment="Left"/>
             <StatusBarItem Content="Last saved 0 Minutes ago" HorizontalAlignment="Right"/>
@@ -55,36 +58,43 @@
                     <MenuItem Header="_Layout"/>
                 </MenuItem>
                 <MenuItem Header="_Help">
-
+                    <MenuItem Header="_Wiki Page" Click="MenuItem_Click"/>
                 </MenuItem>
             </Menu>
         </DockPanel>
-        <DockPanel Grid.Row="1" Grid.ColumnSpan="6" Margin="0,0,0,90">
-            <Button Content="+" HorizontalAlignment="Right" Width="30" Height="30" Margin="0,2,10,2"/>
+        <DockPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="6">
+            <Button Content="+" HorizontalAlignment="Right" Width="30" Height="30" Margin="0,4,5,2"/>
         </DockPanel>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.ColumnSpan="6" Grid.RowSpan="5" Margin="0,60,0,20" HorizontalAlignment="Stretch" Background="Beige">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.ColumnSpan="6" Grid.RowSpan="5" Margin="0,60,0,20" HorizontalAlignment="Stretch">
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
-                <!--<TextBlock TextWrapping="Wrap" Margin="0,0,0,20"> Scrolling is enabled when nexessary. Resize the window, making it larger and smaller</TextBlock>!-->
+                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="LightGray"/>
+                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="Gray"/>
+                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="LightGray"/>
+                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="Gray"/>
+                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="LightGray"/>
+                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="Gray"/>
+
+                <!--
                 <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
                     <Rectangle Fill="Maroon" VerticalAlignment="Center" HorizontalAlignment="Left" Height="40" Width="40"  Margin="5,5,0,5"/>
                     <Label Content="Instruction 1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-40,0,0,0"/>
                 </DockPanel>
-                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
+                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
                     <Label Content="Instruction 2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
                     <Label Content="Instruction 3" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
                     <Label Content="Instruction 4" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
                     <Label Content="Instruction 5" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
                     <Label Content="Instruction 6" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </StackPanel>
-                <!--<Rectangle Fill="AliceBlue" Width="500" Height="1000"></Rectangle>!-->
+                </DockPanel>
+                !-->
             </StackPanel>
         </ScrollViewer>
     </Grid>
