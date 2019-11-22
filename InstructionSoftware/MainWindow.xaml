@@ -63,39 +63,10 @@
             </Menu>
         </DockPanel>
         <DockPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.ColumnSpan="6">
-            <Button Content="+" HorizontalAlignment="Right" Width="30" Height="30" Margin="0,4,5,2"/>
+            <Button Content="+" HorizontalAlignment="Right" Width="30" Height="30" Margin="0,4,5,2" Command="{Binding Path=AddInstructionCommand}"/>
         </DockPanel>
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.ColumnSpan="6" Grid.RowSpan="5" Margin="0,60,0,20" HorizontalAlignment="Stretch">
-            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
-                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="LightGray"/>
-                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="Gray"/>
-                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="LightGray"/>
-                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="Gray"/>
-                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="LightGray"/>
-                <uc:InstructionBlock InstructionLabel="Instruction 1" bgColor="Gray"/>
-
-                <!--
-                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
-                    <Rectangle Fill="Maroon" VerticalAlignment="Center" HorizontalAlignment="Left" Height="40" Width="40"  Margin="5,5,0,5"/>
-                    <Label Content="Instruction 1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-40,0,0,0"/>
-                </DockPanel>
-                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
-                    <Label Content="Instruction 2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </DockPanel>
-                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
-                    <Label Content="Instruction 3" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </DockPanel>
-                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
-                    <Label Content="Instruction 4" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </DockPanel>
-                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="DarkGray">
-                    <Label Content="Instruction 5" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </DockPanel>
-                <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="60" Background="LightGray">
-                    <Label Content="Instruction 6" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="22"/>
-                </DockPanel>
-                !-->
-            </StackPanel>
+        <ScrollViewer x:Name="InstructionScrollView" VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.ColumnSpan="6" Grid.RowSpan="5" Margin="0,60,0,20" HorizontalAlignment="Stretch">
+            
         </ScrollViewer>
     </Grid>
 </Window>

@@ -22,7 +22,9 @@ namespace InstructionSoftware.User_Controls
         }
 
         public string InstructionLabel { get; set; }
-        public System.Windows.Media.SolidColorBrush bgColor { get; set; }
+        public int InstructionIndex { get; set; }
+        public System.Windows.Media.SolidColorBrush BlockColor { get; set; }
+        public System.Windows.Media.SolidColorBrush BgColor { get; set; }
         public int MaxLength { get; set; }
     }
 }

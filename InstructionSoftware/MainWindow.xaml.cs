@@ -22,10 +22,17 @@ namespace InstructionSoftware
     /// </summary>
     public partial class MainWindow : Window
     {
+        public StackPanel InstructionsStackPanel { get; set; }
+        public ScrollViewer IstScrollView { get; private set; }
+        public static MainWindow Instance;
+
         public MainWindow()
         {
+            Instance = this;
             InitializeComponent();
             DataContext = new MainWindowViewModel();
+            IstScrollView = InstructionScrollView;
+            IstScrollView.Content = InstructionsStackPanel;
         }
 
         public static readonly DependencyProperty ScaleValueProperty = DependencyProperty.Register("ScaleValue", typeof(double), typeof(MainWindow), new UIPropertyMetadata(1.0, new PropertyChangedCallback(OnScaleValueChanged), new CoerceValueCallback(OnCoerceScaleValue)));
