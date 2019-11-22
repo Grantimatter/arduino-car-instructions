@@ -30,10 +30,10 @@ namespace InstructionSoftware.ViewModels
 
         private void AddInstruction()
         {
-            AddBlankInstruction();
+            AddDefaultInstruction();
         }
 
-        private void AddBlankInstruction()
+        private void AddDefaultInstruction()
         {
             User_Controls.InstructionBlock ib = new User_Controls.InstructionBlock();
             ib.BgColor = InstructionBgColorFinder();
