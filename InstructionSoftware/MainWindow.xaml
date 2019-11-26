@@ -6,7 +6,7 @@
         xmlns:uc="clr-namespace:InstructionSoftware.User_Controls"
         xmlns:local="clr-namespace:InstructionSoftware"
         mc:Ignorable="d"
-        Title="Carduino" Height="450" Width="1000" MinHeight="240" MinWidth="360">
+        Title="Carduino" Height="450" Width="1000" MinHeight="250" MinWidth="360">
     <Grid Name="MainGrid" SizeChanged="MainGrid_SizeChanged">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -131,7 +131,8 @@
                 <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="8,4,0,2"/>
 
             </StackPanel>
-            <Rectangle DockPanel.Dock="Bottom" Fill="LightGray" Height="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+            
+            <!--<Rectangle DockPanel.Dock="Bottom" Fill="LightGray" Height="4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,0,0,2"/>!-->
 
         </DockPanel>
         <DockPanel Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="5">
