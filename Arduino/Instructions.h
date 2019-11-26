@@ -12,7 +12,7 @@
 class Instructions
 {
   public:
-    Instructions(int timeSpentAtEndValue, int rampUpTimestep, int rampStartingValue, int rampUpEndValue, int rampDownEndValue, int rampDownTimestep, int drivMotorPower = 255, int passMotorPower = 255)
+    Instructions(int timeSpentAtEndValue, int rampUpTimestep, int rampStartingValue, int rampUpEndValue, int rampDownEndValue, int rampDownTimestep, int drivMotorPower, int passMotorPower)
     {
       t = timeSpentAtEndValue;
       rut = rampUpTimestep;

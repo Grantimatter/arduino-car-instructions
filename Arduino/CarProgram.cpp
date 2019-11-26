@@ -73,8 +73,8 @@ void CarProgram::Drive(Instructions instructions)
     // Motor acceleration
     for (int i(instructions.rsv); i < instructions.ruev; i++)
     {
-        motor_run(drivP, i, drivM);
-        motor_run(passP, i, passM);
+        motor_run(drivP, i, instructions.dmp);
+        motor_run(passP, i, instructions.pmp);
         delay(instructions.rut);
     }
 
@@ -84,8 +84,8 @@ void CarProgram::Drive(Instructions instructions)
     // Motor deceleration
     for (int i(instructions.ruev); i > instructions.rdev; i--)
     {
-        motor_run(drivP, i, drivM);
-        motor_run(passP, i, passM);
+        motor_run(drivP, i, instructions.dmp);
+        motor_run(passP, i, instructions.pmp);
         delay(instructions.rdt);
     }
 }
