@@ -1,4 +1,6 @@
-﻿using System;
+﻿using InstructionSoftware.ViewModels;
+using InstructionSoftware.ViewModels.Commands;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -15,10 +17,19 @@ namespace InstructionSoftware.User_Controls
 {
     public partial class InstructionBlock : UserControl
     {
+        public RemoveInstructionCommand RemoveInstructionCommand { get; private set; }
+
         public InstructionBlock()
         {
             InitializeComponent();
             this.DataContext = this;
+            RemoveInstructionCommand = new RemoveInstructionCommand(RemoveInstruction);
+            removeButton.CommandParameter = this;
+        }
+
+        private void RemoveInstruction(InstructionBlock ib)
+        {
+            InstructionBlockModel.RemoveInstruction(ib);
         }
 
         public string InstructionLabel { get; set; }

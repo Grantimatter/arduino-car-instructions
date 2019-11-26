@@ -1,4 +1,5 @@
-﻿using InstructionSoftware.ViewModels.Commands;
+﻿using InstructionSoftware.User_Controls;
+using InstructionSoftware.ViewModels.Commands;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,49 +11,30 @@ namespace InstructionSoftware.ViewModels
 {
     public class MainWindowViewModel
     {
+        public InstructionBlockModel ibm { get; set; }
+
         public MessageCommand DisplayMessageCommand { get; private set; }
         public CloseAppCommand CloseAppCommand { get; private set; }
         public AddInstructionCommand AddInstructionCommand { get; private set; }
+
+        public static List<InstructionBlock> InstructionBlocks = new List<InstructionBlock>();
 
         public MainWindowViewModel()
         {
             DisplayMessageCommand = new MessageCommand(DisplayMessage);
             CloseAppCommand = new CloseAppCommand(ShutdownApp);
             AddInstructionCommand = new AddInstructionCommand(AddInstruction);
-
-            MainWindow.Instance.InstructionsStackPanel = new StackPanel();
-            MainWindow.Instance.InstructionsStackPanel.VerticalAlignment = VerticalAlignment.Top;
-            MainWindow.Instance.InstructionsStackPanel.HorizontalAlignment = HorizontalAlignment.Stretch;
-
-            User_Controls.InstructionBlock ib = new User_Controls.InstructionBlock();
-            AddInstruction();
+            ibm = new InstructionBlockModel();
         }
 
-        private void AddInstruction()
+        public void AddInstruction()
         {
-            AddDefaultInstruction();
+            InstructionBlockModel.AddDefaultInstruction();
         }
 
-        private void AddDefaultInstruction()
+        public void AddInstruction(User_Controls.InstructionBlock ib)
         {
-            User_Controls.InstructionBlock ib = new User_Controls.InstructionBlock();
-            ib.BgColor = InstructionBgColorFinder();
-
-            ib.InstructionIndex = MainWindow.Instance.InstructionsStackPanel.Children.Count + 1;
-            ib.InstructionLabel = "New Instruction";
-            ib.BlockColor = new SolidColorBrush(Colors.Maroon);
-
-            MainWindow.Instance.InstructionsStackPanel.Children.Add(ib);
-        }
-
-        private SolidColorBrush InstructionBgColorFinder()
-        {
-            if (MainWindow.Instance.InstructionsStackPanel.Children.Count == 0)
-                return new SolidColorBrush(Colors.LightGray);
-            else if (MainWindow.Instance.InstructionsStackPanel.Children.Count % 2 > 0)
-                return new SolidColorBrush(Colors.Gray);
-            else
-                return new SolidColorBrush(Colors.LightGray);
+            InstructionBlockModel.AddInstruction(ib);
         }
 
         public void DisplayMessage(string message)
