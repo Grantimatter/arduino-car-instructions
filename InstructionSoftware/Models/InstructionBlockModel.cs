@@ -23,7 +23,7 @@ namespace InstructionSoftware.ViewModels
         {
             if (MainWindow.Instance.InstructionsStackPanel.Children.Count > 0)
             {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to remove this instruction?", "This is the caption", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to remove this instruction?", "Delete Instruction Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 switch(result)
                 {
                     case MessageBoxResult.Yes:

@@ -40,6 +40,7 @@
                             <Image Source="/icons/save2.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem Header="_Verify" Command="{Binding VerifyProgramCommand}"/>
                     <MenuItem Header="_Exit" Command="{Binding CloseAppCommand}"/>
 
                 </MenuItem>

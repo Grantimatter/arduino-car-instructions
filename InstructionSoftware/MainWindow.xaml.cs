@@ -26,8 +26,6 @@ namespace InstructionSoftware
         public ScrollViewer IstScrollView { get; private set; }
         public static MainWindow Instance;
 
-        //public MainWindowViewModel mwvm { get; set; }
-
         public MainWindow()
         {
             Instance = this;
