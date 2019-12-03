@@ -5,10 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InstructionSoftware"
         mc:Ignorable="d"
-        Title="Output" MinHeight="220" MinWidth="400" Height="220" Width="400">
+        Title="Output" MinHeight="240" MinWidth="400" Height="240" Width="400">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Black">
             <TextBlock x:Name="ouputTextBox" Foreground="LimeGreen" TextWrapping="WrapWithOverflow"/>
         </ScrollViewer>
+        <TextBox x:Name="consoleInput" Grid.Row="1" Background="Black" Foreground="WhiteSmoke"/>
+        <TextBlock x:Name="status" Grid.Row="2" Background="Black" Foreground="LimeGreen"/>
     </Grid>
 </Window>

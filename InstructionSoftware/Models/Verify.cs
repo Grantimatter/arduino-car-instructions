@@ -4,59 +4,68 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Threading;
 
 namespace InstructionSoftware.Models
 {
     public static class Verify
     {
+        public static string ExMessage { get; set; }
+        public static string StdOut { get; private set; }
+        public static string StdErr { get; private set; }
+
         private static ArduinoOutputWindow ardOut;
-        private static StringBuilder sortOuput = null;
-        private static int numOutputLines = 0;
 
         public static void VerifyProgram()
         {
-            //ardOut = new ArduinoOutputWindow();
-            //ardOut.Show();
+            ardOut = new ArduinoOutputWindow();
+            ardOut.Owner = MainWindow.Instance;
+            ardOut.Show();
 
-            System.Diagnostics.Process pProcess = new System.Diagnostics.Process();
-            //sortOuput = new StringBuilder();
-            //pProcess.OutputDataReceived += sortOutputHandler;
-            pProcess.StartInfo.FileName = "cmd";
-            pProcess.StartInfo.WorkingDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\..\"));
-            pProcess.StartInfo.Arguments = "/k arduino compile -b arduino:avr:uno CarSketch";
-            pProcess.StartInfo.UseShellExecute = false;
-            //pProcess.StartInfo.RedirectStandardOutput = true;
-            //pProcess.StartInfo.RedirectStandardInput = true;
-            //pProcess.StartInfo.CreateNoWindow = true;
-            pProcess.Start();
+            string args = "/k arduino compile -b arduino:avr:uno CarSketch";
 
-            //StreamWriter wr = pProcess.StandardInput;
-            //StreamReader rr = pProcess.StandardOutput;
-
-            //wr.WriteLine("arduino compile -b arduino:avr:uno CarSketch");
-            //wr.WriteLine("exit");
-
-            //pProcess.BeginOutputReadLine();
-
-            //string strOutput = rr.ReadToEndAsync().Result;
-            //ardOut.ouputTextBox.Text = strOutput;
-            //wr.Flush();
-            pProcess.WaitForExit();
+            StartProcess("cmd.exe", args);
+            ardOut.ouputTextBox.Text = StdOut;
         }
 
-        private static void sortOutputHandler(object sendingProcess, DataReceivedEventArgs outline)
+        private static void StartProcess(string fileName, string arguments)
         {
-            if(!String.IsNullOrEmpty(outline.Data))
-            {
-                numOutputLines++;
-                sortOuput.Append(Environment.NewLine + $"[{numOutputLines}] - {outline.Data}");
-            }
+            ProcessStartInfo pInfo = new ProcessStartInfo(fileName, arguments);
+            
+            // Set options
+            pInfo.WorkingDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\..\"));
+            pInfo.UseShellExecute = false;
+            pInfo.CreateNoWindow = true;
+
+            // Specify redirection
+            pInfo.RedirectStandardOutput = true;
+            pInfo.RedirectStandardInput = true;
+            pInfo.RedirectStandardError = true;
+
+            StdOut = string.Empty;
+
+            Process process = new Process();
+            process.StartInfo = pInfo;
+
+            process.Start();
+
+            StreamWriter wr = process.StandardInput;
+            StreamReader rr = process.StandardOutput;
+
+            Read(rr);
+        }
+
+        static async void Read(StreamReader rr)
+        {
+            StdOut = await rr.ReadToEndAsync();
+            UpdateConsole(StdOut);
         }
 
         private static void UpdateConsole(string text)
         {
-            ardOut.ouputTextBox.Text += "\n" + text;
+            ardOut.ouputTextBox.Text = text;
         }
     }
 }
