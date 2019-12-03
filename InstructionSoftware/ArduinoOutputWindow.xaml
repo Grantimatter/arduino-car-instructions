@@ -15,7 +15,13 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Black">
             <TextBlock x:Name="ouputTextBox" Foreground="LimeGreen" TextWrapping="WrapWithOverflow"/>
         </ScrollViewer>
-        <TextBox x:Name="consoleInput" Grid.Row="1" Background="Black" Foreground="WhiteSmoke"/>
-        <TextBlock x:Name="status" Grid.Row="2" Background="Black" Foreground="LimeGreen"/>
+        <TextBox x:Name="consoleInput" Grid.Row="1" Background="Black" Foreground="Gray">
+            <TextBox.InputBindings>
+                <KeyBinding Command="{Binding Path=ConsoleInputCommand}" Key="Return"/>
+            </TextBox.InputBindings>
+        </TextBox>
+        <StatusBar x:Name="outputStatusBar" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <StatusBarItem Content="idk if this is needed"/>
+        </StatusBar>
     </Grid>
 </Window>

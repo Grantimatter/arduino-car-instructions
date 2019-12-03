@@ -17,6 +17,7 @@ namespace InstructionSoftware.ViewModels
         public CloseAppCommand CloseAppCommand { get; private set; }
         public AddInstructionCommand AddInstructionCommand { get; private set; }
         public VerifyProgramCommand VerifyProgramCommand { get; private set; }
+        public ConsoleInputCommand ConsoleInputCommand { get; private set; }
 
         public static List<InstructionBlock> InstructionBlocks = new List<InstructionBlock>();
 
@@ -26,7 +27,13 @@ namespace InstructionSoftware.ViewModels
             CloseAppCommand = new CloseAppCommand(ShutdownApp);
             AddInstructionCommand = new AddInstructionCommand(AddInstruction);
             VerifyProgramCommand = new VerifyProgramCommand(VerifyProgram);
+            ConsoleInputCommand = new ConsoleInputCommand(ConsoleInput);
             ibm = new InstructionBlockModel();
+        }
+
+        private void ConsoleInput(string obj)
+        {
+            
         }
 
         private void VerifyProgram()
