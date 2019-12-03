@@ -23,10 +23,11 @@ void loop()
 		
 		// Fix the power variable
 		Instructions SHUTDOWN = Instructions(0, 0, 0, 0, 0, 0, 0, 0);
-		Instructions ForwardGainMomentum = Instructions(2000, 0, 150, 200, 100, 10, 200, 200);
-		Instructions Forward = Instructions(0, 0, 100, 100, 0, 10, 100, 100);
-		Instructions Turn = Instructions(800, 10, 150, 150, 0, 10, -150, 150);
-		Instructions Reverse = Instructions(3000, 10, 150, 150, 0, 10, -150, -150);
+
+		Instructions ForwardGainMomentum = Instructions(0, 0, 150, 200, 100, 10, 200, 200);
+		Instructions Forward = Instructions(3000, 0, 100, 100, 0, 10, 150, 150);
+		Instructions Turn = Instructions(100, 10, 150, 150, 0, 10, -175, 175);
+		Instructions Reverse = Instructions(3000, 10, 175, 175, 0, 10, -175, -175);
 
 		car.RunInstruction(ForwardGainMomentum);
 		car.RunInstruction(Forward);
