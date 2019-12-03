@@ -25,7 +25,7 @@ namespace InstructionSoftware.Models
             pProcess.StartInfo.FileName = "cmd";
             pProcess.StartInfo.WorkingDirectory = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\..\"));
             pProcess.StartInfo.Arguments = "/k arduino compile -b arduino:avr:uno CarSketch";
-            pProcess.StartInfo.UseShellExecute = true;
+            pProcess.StartInfo.UseShellExecute = false;
             //pProcess.StartInfo.RedirectStandardOutput = true;
             //pProcess.StartInfo.RedirectStandardInput = true;
             //pProcess.StartInfo.CreateNoWindow = true;
