@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "C:\\Users\\Grant-Laptop\\Google Drive\\School\\Engineering\\Intro to Engineering\\Final Project\\Arduino Code"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.vs": true,
+			"**/.vscode": true,
+			"**/*.elf": true,
+			"**/*InstructionSoftware.sln": true,
+			"**/InstructionSoftware": true
+		}
+	}
+}

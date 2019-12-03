@@ -21,73 +21,10 @@ CarProgram::CarProgram(int passPWM, int passFor, int passRev, int passMax, int d
     pinMode(drivR, OUTPUT);
 }
 
-void CarProgram::RunInstruction(Instructions instructions)
+void CarProgram::RunInstruction(Instruction instructions)
 {
     ActivateMotors(instructions);
     Drive(instructions);
-}
-
-void CarProgram::ActivateMotors(Instructions instructions)
-{
-    // Activate or Deativate passenger motor based on motor power (+ or -)
-    if (instructions.pmp > 0)
-    {
-        digitalWrite(passF, HIGH);
-        digitalWrite(passR, LOW);
-    }
-    else if (instructions.pmp < 0)
-    {
-        digitalWrite(passF, LOW);
-        digitalWrite(passR, HIGH);
-
-        instructions.pmp = abs(instructions.pmp);
-    }
-    else
-    {
-        digitalWrite(passF, LOW);
-        digitalWrite(passR, LOW);
-    }
-
-    // Activate or Deativate driver motor based on motor power (+ or -)
-    if (instructions.dmp > 0)
-    {
-        digitalWrite(drivF, HIGH);
-        digitalWrite(drivR, LOW);
-    }
-    else if (instructions.dmp < 0)
-    {
-        digitalWrite(drivF, LOW);
-        digitalWrite(drivR, HIGH);
-
-        instructions.dmp = abs(instructions.dmp);
-    }
-    else
-    {
-        digitalWrite(drivF, LOW);
-        digitalWrite(drivR, LOW);
-    }
-}
-
-void CarProgram::Drive(Instructions instructions)
-{
-    // Motor acceleration
-    for (int i(instructions.rsv); i < instructions.ruev; i++)
-    {
-        motor_run(drivP, i, instructions.dmp);
-        motor_run(passP, i, instructions.pmp);
-        delay(instructions.rut);
-    }
-
-    // Amount of time to run at full speed
-    delay(instructions.t);
-
-    // Motor deceleration
-    for (int i(instructions.ruev); i > instructions.rdev; i--)
-    {
-        motor_run(drivP, i, instructions.dmp);
-        motor_run(passP, i, instructions.pmp);
-        delay(instructions.rdt);
-    }
 }
 
 void CarProgram::Shutdown()
@@ -96,6 +33,56 @@ void CarProgram::Shutdown()
     digitalWrite(passR, LOW);
     digitalWrite(drivF, LOW);
     digitalWrite(drivR, LOW);
+}
+
+void CarProgram::ActivateMotors(Instruction instructions)
+{
+    // Activate or Deativate passenger motor based on maneuver type
+    switch (instructions.dt)
+    {
+        case Instruction::DriveType::forward:
+            digitalWrite(drivF, HIGH);
+            digitalWrite(drivR, LOW);
+            digitalWrite(passF, HIGH);
+            digitalWrite(passR, LOW);
+        break;
+
+        case Instruction::DriveType::backward:
+            digitalWrite(drivF, LOW);
+            digitalWrite(drivR, HIGH);
+            digitalWrite(passF, LOW);
+            digitalWrite(passR, HIGH);
+        break;
+
+        case Instruction::DriveType::right:
+            digitalWrite(drivF, HIGH);
+            digitalWrite(drivR, LOW);
+            digitalWrite(passF, LOW);
+            digitalWrite(passR, HIGH);
+        break;
+
+        case Instruction::DriveType::left:
+            digitalWrite(drivF, LOW);
+            digitalWrite(drivR, HIGH);
+            digitalWrite(passF, HIGH);
+            digitalWrite(passR, LOW);
+        break;
+    
+    default:
+        break;
+    }
+}
+
+void CarProgram::Drive(Instruction instructions)
+{
+    motor_run(drivP, instructions.dmp, drivM);
+    motor_run(passP, instructions.pmp, passM);
+
+    // Amount of time performing action
+    delay(instructions.t);
+    
+    Shutdown();
+    delay(instructions.das);
 }
 
 void CarProgram::motor_run(int pin, int PWM, int PWMMax)

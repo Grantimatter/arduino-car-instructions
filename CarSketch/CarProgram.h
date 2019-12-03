@@ -9,22 +9,22 @@
 #include "WConstants.h"
 #endif
 
-#include "Instructions.h"
+#include "Instruction.h"
 
 class CarProgram
 {
   public:
     CarProgram(int passPWM, int passFor, int passRev, int passMax, int drivPWM, int drivFor, int drivRev, int drivMax);
 
-    void RunInstruction(Instructions);
+    void RunInstruction(Instruction);
+    void Shutdown();
 
   private:
     int passP, passF, passR, passM, drivP, drivF, drivR, drivM;
     bool initialized;
 
-    void Drive(Instructions);
-    void Shutdown();
-    void ActivateMotors(Instructions);
+    void Drive(Instruction);
+    void ActivateMotors(Instruction);
     void motor_run(int pin, int PWM, int PWMMax);
 };
 

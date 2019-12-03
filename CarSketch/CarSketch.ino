@@ -20,38 +20,28 @@ void loop()
 	if (running)
 	{
 		CarProgram car = CarProgram(PassPWM, PassFor, PassRev, PassMax, DrivPWM, DrivFor, DrivRev, DrivMax);
+
+		Instruction::DriveType forward = Instruction::DriveType::forward;
+		Instruction::DriveType backward = Instruction::DriveType::backward;
+		Instruction::DriveType right = Instruction::DriveType::right;
+		Instruction::DriveType left = Instruction::DriveType::left;
 		
-		// Fix the power variable
-		Instructions SHUTDOWN = Instructions(0, 0, 0, 0, 0, 0, 0, 0);
+		// Instruction to drive forward 6 feet from start
+		Instruction forwardSixFeet = Instruction(forward, 3100, 150, 125, 125);
 
-		// First Forward Section
-		Instructions ForwardGainMomentum = Instructions(0, 0, 150, 200, 100, 10, 200, 200);
-		Instructions Forward = Instructions(2000, 0, 150, 150, 0, 0, 150, 150);
+		// Instructon to turn right 90 degrees
+		Instruction turnRight90 = Instruction(right, 310, 125, 125, 250);
 
-		// 90 degree turn then reverse
-		Instructions Turn = Instructions(200, 10, 175, 200, 175, 10, -255, 255);
-		Instructions Reverse = Instructions(3000, 10, 175, 200, 175, 10, -255, -255);
+		// Instruction to drive backward 6 feet
+		Instruction backwardSixFeet(backward, 3100, 125, 125, 250);
 
-		// Turn 405
-		Instructions Turn405 = Instructions(250, 10, 175, 200, 175, 10, 0, 175);
+		car.RunInstructionn(forwardSixFeet);
+		car.RunInstruction(turnRight90);
+		car.RunInstruction(backwardSixFeet);
+		car.RunInstruction(turnRight90);
+		car.RunInstruction(forwardSixFeet);
 
-		// Tunr 90
-		Instructions Turn90 = Instructions(50, 10, 175, 200, 175, 10, 0, 175);
-
-
-		car.RunInstruction(ForwardGainMomentum);
-		car.RunInstruction(Forward);
-		
-		car.RunInstruction(Turn405);
-
-		car.RunInstruction(ForwardGainMomentum);
-		car.RunInstruction(Forward);
-
-		car.RunInstruction(Turn90);
-
-		//car.RunInstruction(Reverse);
-		
-		car.RunInstruction(SHUTDOWN);
+		car.Shutdown();
 
 		if(!loopProgram)
 			running = false;
