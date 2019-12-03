@@ -3,6 +3,8 @@
 *.suo
 *.ide
 *.dtbcache
+*.hex
+*.elf
 
 # Folders to ignore
 bin

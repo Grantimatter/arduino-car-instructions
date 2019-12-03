@@ -80,7 +80,8 @@
         <DockPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Margin="0,0,0,0">
             <Label Content="{Binding Path=InstructionLabel}" FontSize="12" DockPanel.Dock="Top" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Label x:Name="indexLabel" Content="{Binding Path=InstructionIndex}" FontSize="10" DockPanel.Dock="Bottom" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-            <Rectangle Fill="{Binding Path=BlockColor}" Width="50" Height="50" DockPanel.Dock="Left" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Rectangle Fill="{Binding Path=BlockColor}" Width="65" Height="65" Margin="10,0,0,0" DockPanel.Dock="Left" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Text="TextBlock" TextWrapping="Wrap" Width="0"/>
         </DockPanel>
 
         <DockPanel Grid.Column="5" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right">

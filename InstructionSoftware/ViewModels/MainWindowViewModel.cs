@@ -16,6 +16,7 @@ namespace InstructionSoftware.ViewModels
         public MessageCommand DisplayMessageCommand { get; private set; }
         public CloseAppCommand CloseAppCommand { get; private set; }
         public AddInstructionCommand AddInstructionCommand { get; private set; }
+        public VerifyProgramCommand VerifyProgramCommand { get; private set; }
 
         public static List<InstructionBlock> InstructionBlocks = new List<InstructionBlock>();
 
@@ -24,7 +25,15 @@ namespace InstructionSoftware.ViewModels
             DisplayMessageCommand = new MessageCommand(DisplayMessage);
             CloseAppCommand = new CloseAppCommand(ShutdownApp);
             AddInstructionCommand = new AddInstructionCommand(AddInstruction);
+            VerifyProgramCommand = new VerifyProgramCommand(VerifyProgram);
             ibm = new InstructionBlockModel();
+        }
+
+        private void VerifyProgram()
+        {
+            Models.Verify.VerifyProgram();
+            //ArduinoOutputWindow ardOut = new ArduinoOutputWindow();
+            //ardOut.Show();
         }
 
         public void AddInstruction()

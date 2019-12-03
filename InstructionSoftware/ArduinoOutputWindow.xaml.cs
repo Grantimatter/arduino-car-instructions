@@ -12,12 +12,9 @@ using System.Windows.Shapes;
 
 namespace InstructionSoftware
 {
-    /// <summary>
-    /// Interaction logic for ArduinoOutput.xaml
-    /// </summary>
-    public partial class ArduinoOutput : Window
+    public partial class ArduinoOutputWindow : Window
     {
-        public ArduinoOutput()
+        public ArduinoOutputWindow()
         {
             InitializeComponent();
         }
