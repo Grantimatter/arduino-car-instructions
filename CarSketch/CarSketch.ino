@@ -35,7 +35,7 @@ void loop()
 		// Instruction to drive backward 6 feet
 		Instruction backwardSixFeet(backward, 3100, 125, 125, 250);
 
-		car.RunInstructionn(forwardSixFeet);
+		car.RunInstruction(forwardSixFeet);
 		car.RunInstruction(turnRight90);
 		car.RunInstruction(backwardSixFeet);
 		car.RunInstruction(turnRight90);
