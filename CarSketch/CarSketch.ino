@@ -1,13 +1,13 @@
 #include "CarProgram.h"
 
 #define PassPWM 5   // pin for the passenger PWM signal 0->255.  This is proportional to the speed of the tire
-#define PassFor 7   // pin to enable passenger tire forward (LOW off, HIGH forward)
+#define PassFor 10   // pin to enable passenger tire forward (LOW off, HIGH forward)
 #define PassRev 9   // pin to enable passenger tire reverse (LOW off, HIGH reverse)
 #define PassMax 254 // maximum signal for the passenger motor
 
 #define DrivPWM 6  // pin for the driver PWM signal 0->255.  This is proportional to the speed of the tire
-#define DrivFor 10  // pin to enable driver tire forward (LOW off, HIGH forward)
-#define DrivRev 8  // pin to enable driver tire reverse (LOW off, HIGH reverse)
+#define DrivFor 8  // pin to enable driver tire forward (LOW off, HIGH forward)
+#define DrivRev 7  // pin to enable driver tire reverse (LOW off, HIGH reverse)
 #define DrivMax 255 // maximum signal for the driver motor
 
 // Keep this, Arduino won't compile without it
