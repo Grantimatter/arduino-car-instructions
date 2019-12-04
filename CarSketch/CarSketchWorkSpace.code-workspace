@@ -1,16 +1,8 @@
 {
 	"folders": [
 		{
-			"path": "C:\\Users\\Grant-Laptop\\Google Drive\\School\\Engineering\\Intro to Engineering\\Final Project\\Arduino Code"
+			"path": "A:\\git\\GitHub\\arduino-car-instructions"
 		}
 	],
-	"settings": {
-		"files.exclude": {
-			"**/.vs": true,
-			"**/.vscode": true,
-			"**/*.elf": true,
-			"**/*InstructionSoftware.sln": true,
-			"**/InstructionSoftware": true
-		}
-	}
+	"settings": {}
 }

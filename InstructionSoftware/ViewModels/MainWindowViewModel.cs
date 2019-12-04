@@ -12,7 +12,6 @@ namespace InstructionSoftware.ViewModels
     public class MainWindowViewModel
     {
         public InstructionBlockModel ibm { get; set; }
-
         public MessageCommand DisplayMessageCommand { get; private set; }
         public CloseAppCommand CloseAppCommand { get; private set; }
         public AddInstructionCommand AddInstructionCommand { get; private set; }
