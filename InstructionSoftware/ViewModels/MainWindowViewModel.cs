@@ -1,5 +1,6 @@
 ﻿using InstructionSoftware.User_Controls;
 using InstructionSoftware.ViewModels.Commands;
+using InstructionSoftware.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +18,7 @@ namespace InstructionSoftware.ViewModels
         public AddInstructionCommand AddInstructionCommand { get; private set; }
         public VerifyProgramCommand VerifyProgramCommand { get; private set; }
         public ConsoleInputCommand ConsoleInputCommand { get; private set; }
+        public ArduinoHandler ArduinoHandler { get; private set; }
 
         public static List<InstructionBlock> InstructionBlocks = new List<InstructionBlock>();
 
@@ -27,6 +29,7 @@ namespace InstructionSoftware.ViewModels
             AddInstructionCommand = new AddInstructionCommand(AddInstruction);
             VerifyProgramCommand = new VerifyProgramCommand(VerifyProgram);
             ConsoleInputCommand = new ConsoleInputCommand(ConsoleInput);
+            ArduinoHandler = new ArduinoHandler();
             ibm = new InstructionBlockModel();
         }
 
@@ -38,8 +41,6 @@ namespace InstructionSoftware.ViewModels
         private void VerifyProgram()
         {
             Models.Verify.VerifyProgram();
-            //ArduinoOutputWindow ardOut = new ArduinoOutputWindow();
-            //ardOut.Show();
         }
 
         public void AddInstruction()

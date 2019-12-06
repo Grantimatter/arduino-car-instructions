@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:InstructionSoftware.User_Controls"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="1000">
-    <Grid x:Name="mainGrid" Height="140" Background="{Binding Path=BgColor}">
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="mainGrid" Height="100" Background="{Binding Path=BgColor}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
@@ -22,58 +22,30 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <DockPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+        <DockPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,0,0">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                <Label Content="Drive Max Power: " FontSize="12" Margin="0,0,0,0" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Drive Power: " FontSize="12" Margin="0,0,0,0" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="R"/>
-                    <Slider x:Name="DMSlider" Value="255" Minimum="-255" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Width="200" VerticalAlignment="Center"/>
+                    <Slider x:Name="DSlider" Value="255" Minimum="-255" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Width="200" VerticalAlignment="Center"/>
                     <Rectangle Panel.ZIndex="-1" Fill="LightGray" VerticalAlignment="Stretch" Width="2" HorizontalAlignment="Center" Margin="-200,0,0,0"/>
                     <Label Content="F"/>
                 </StackPanel>
-                <TextBox x:Name="DMTextBox" Text="{Binding ElementName=DMSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" FontSize="12" MaxLength="3" Margin="10,4"/>
+                <TextBox x:Name="DTextBox" Text="{Binding ElementName=DSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" FontSize="12" MaxLength="3" Margin="10,4"/>
             </StackPanel>
         </DockPanel>
 
-        <DockPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0,0,0,0">
+        <DockPanel Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,0,0">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                <Label Content="Pass Max Power: " FontSize="12" Margin="0,0,5,0" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Pass Power: " FontSize="12" Margin="0,0,5,0" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="R" Margin="0,0,0,0"/>
-                    <Slider x:Name="PMSlider" Value="255" Minimum="-255" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Width="200" VerticalAlignment="Center"/>
+                    <Slider x:Name="PSlider" Value="255" Minimum="-255" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Width="200" VerticalAlignment="Center"/>
                     <Rectangle Panel.ZIndex="-1" Fill="LightGray" VerticalAlignment="Stretch" Width="2" HorizontalAlignment="Center" Margin="-200,0,0,0"/>
                     <Label Content="F"/>
                 </StackPanel>
 
-                <TextBox x:Name="PMTextBox" Text="{Binding ElementName=PMSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" FontSize="12" MaxLength="3" Margin="10,4"/>
-            </StackPanel>
-        </DockPanel>
-
-        <DockPanel Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0,0,0,0">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                <Label Content="Drive Start Power: " FontSize="12" Margin="0,0,2,0" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="R" Margin="-4,0,0,0"/>
-                    <Slider x:Name="DmSlider" Value="0" Minimum="-255" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Width="200" VerticalAlignment="Center"/>
-                    <Rectangle Panel.ZIndex="-1" Fill="LightGray" VerticalAlignment="Stretch" Width="2" HorizontalAlignment="Center" Margin="-200,0,0,0"/>
-                    <Label Content="F"/>
-                </StackPanel>
-
-                <TextBox x:Name="DmTextBox" Text="{Binding ElementName=DmSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" FontSize="12" MaxLength="3" Margin="10,4"/>
-            </StackPanel>
-        </DockPanel>
-
-        <DockPanel Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0,0,0,0">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                <Label Content="Pass Start Power: " FontSize="12" Margin="0,0,2,0" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="R" Margin="01,0,0,0"/>
-                    <Slider x:Name="PmSlider" Value="0" Minimum="-255" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" Width="200" VerticalAlignment="Center"/>
-                    <Rectangle Panel.ZIndex="-1" Fill="LightGray" VerticalAlignment="Stretch" Width="2" HorizontalAlignment="Center" Margin="-200,0,0,0"/>
-                    <Label Content="F"/>
-                </StackPanel>
-
-                <TextBox x:Name="PmTextBox" Text="{Binding ElementName=PmSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" FontSize="12" MaxLength="3" Margin="10,4"/>
+                <TextBox x:Name="PTextBox" Text="{Binding ElementName=PSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" FontSize="12" MaxLength="3" Margin="10,4"/>
             </StackPanel>
         </DockPanel>
 
@@ -85,7 +57,7 @@
         </DockPanel>
 
         <DockPanel Grid.Column="5" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <Button x:Name="removeButton" Content="-" Width="24" Height="24" Margin="5" VerticalAlignment="Top" Command="{Binding Path=RemoveInstructionCommand}"/>
+            <Button ToolTip="Delete Instruction" x:Name="removeButton" Content="-" Width="24" Height="24" Margin="5" VerticalAlignment="Top" Command="{Binding Path=RemoveInstructionCommand}"/>
         </DockPanel>
     </Grid>
 </UserControl>

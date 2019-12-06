@@ -60,68 +60,69 @@
             </Menu>
         </DockPanel>
         <DockPanel Grid.Row="1" VerticalAlignment="Stretch" Grid.ColumnSpan="5" HorizontalAlignment="Stretch">
-            <Button DockPanel.Dock="Left" Content="+" HorizontalAlignment="Left" VerticalAlignment="Center" Width="30" Height="30" Margin="7" Command="{Binding Path=AddInstructionCommand}"/>
+            <Button ToolTip="Create a new instruction" DockPanel.Dock="Left" Content="+" HorizontalAlignment="Left" VerticalAlignment="Center" Width="30" Height="30" Margin="7" Command="{Binding Path=AddInstructionCommand}"/>
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" VerticalAlignment="Top">
 
-                <DockPanel>
+                <DockPanel ToolTip="Calibrate the driver motor's maximum power">
                     <Slider x:Name="drivCalSlider" DockPanel.Dock="Bottom" Value="255" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" VerticalAlignment="Bottom"/>
                     <Label DockPanel.Dock="Left" Content="Drive Calibration:" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
                     <TextBox DockPanel.Dock="Left" Text="{Binding ElementName=drivCalSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="25" FontSize="12" Margin="0"/>
                 </DockPanel>
                 
-                <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="8,4,0,2"/>
+                <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="8,4,5,2"/>
 
-                <DockPanel>
+                <DockPanel ToolTip="Calibrate the passenger motor's maximum power">
                     <Slider x:Name="passCalSlider" DockPanel.Dock="Bottom" Value="255" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" VerticalAlignment="Bottom"/>
-                    <Label DockPanel.Dock="Left" Content="Pass Calibration:" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                    <Label DockPanel.Dock="Left" Content="Pass Calibration:" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                     <TextBox DockPanel.Dock="Left" Text="{Binding ElementName=passCalSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="25" FontSize="12" Margin="0"/>
                 </DockPanel>
 
-                <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="8,4,-8,2"/>
+                <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="8,4,0,2"/>
 
-                <DockPanel Margin="10,0,0,0">
-                    <DockPanel DockPanel.Dock="Top">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top" ToolTip="Setup all pins associated with the drive side motor">
                         <Label Content="Driver Pins" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                     </DockPanel>
 
-                    <DockPanel DockPanel.Dock="Left">
+                    <DockPanel DockPanel.Dock="Left" ToolTip="The PWM pin to control analog signal to the driver side motor">
                         <Label Content="PWM:" HorizontalAlignment="Left"/>
                         <TextBox x:Name="drivPWM" DockPanel.Dock="Right" VerticalAlignment="Center" Text="8" Width="19"/>
                     </DockPanel>
                     <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="5,2,0,2"/>
 
-                    <DockPanel DockPanel.Dock="Left">
+                    <DockPanel DockPanel.Dock="Left" ToolTip="The pin to control the driver motor forward output">
                         <Label Content="For:" HorizontalAlignment="Left"/>
                         <TextBox x:Name="drivFPin" DockPanel.Dock="Right" VerticalAlignment="Center" Text="12" Width="19"/>
                     </DockPanel>
                     <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="5,2,0,2"/>
 
-                    <DockPanel DockPanel.Dock="Bottom">
+                    <DockPanel DockPanel.Dock="Bottom"  ToolTip="The pin to control the driver motor reverse output">
                         <Label Content="Rev:" HorizontalAlignment="Left"/>
                         <TextBox x:Name="drivRPin" DockPanel.Dock="Right" VerticalAlignment="Center" Text="11" Width="19"/>
                     </DockPanel>
                 </DockPanel>
                 
-                <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="8,4,-8,2"/>
+                <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="8,4,0,2"/>
 
-                <DockPanel Margin="10,0,0,0">
-                    <DockPanel DockPanel.Dock="Top">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top" ToolTip="Setup all pins associated with the passenger side motor">
                         <Label Content="Passenger Pins" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                     </DockPanel>
 
-                    <DockPanel DockPanel.Dock="Left">
+                    <DockPanel DockPanel.Dock="Left" ToolTip="The PWM pin to control analog signal to the passenger side motor">
                         <Label Content="PWM:" HorizontalAlignment="Left"/>
                         <TextBox x:Name="passPWM" DockPanel.Dock="Right" VerticalAlignment="Center" Text="8" Width="19"/>
                     </DockPanel>
                     <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="5,2,0,2"/>
 
-                    <DockPanel DockPanel.Dock="Left">
+                    <DockPanel DockPanel.Dock="Left" ToolTip="The pin to control the passenger motor forward output">
                         <Label Content="For:" HorizontalAlignment="Left"/>
                         <TextBox x:Name="passFPin" DockPanel.Dock="Right" VerticalAlignment="Center" Text="8" Width="19"/>
                     </DockPanel>
+                    
                     <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="5,2,0,2"/>
 
-                    <DockPanel DockPanel.Dock="Bottom">
+                    <DockPanel DockPanel.Dock="Bottom" ToolTip="The pin to control the passenger motor reverse output">
                         <Label Content="Rev:" HorizontalAlignment="Left"/>
                         <TextBox x:Name="passRPin" DockPanel.Dock="Right" VerticalAlignment="Center" Text="9" Width="19"/>
                     </DockPanel>
@@ -129,7 +130,20 @@
 
                 </DockPanel>
                 
-                <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="8,4,0,2"/>
+                <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="8,4,8,2"/>
+
+                <DockPanel Width="120" ToolTip="Select your arduino board type">
+                    <Label DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Board Type"/>
+                    <ComboBox x:Name="boardComboBox" IsTextSearchEnabled="True" DockPanel.Dock="Bottom" Margin="0"/>
+                </DockPanel>
+
+                <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="8,4,8,2"/>
+
+                <DockPanel ToolTip="Select the serial port that the arduino is plugged into">
+                    <Label DockPanel.Dock="Top" Content="Serial Port"/>
+                    <ComboBox DockPanel.Dock="Bottom" x:Name="serialComboBox"/>
+
+                </DockPanel>
 
             </StackPanel>
             

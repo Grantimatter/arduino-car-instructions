@@ -7,4 +7,8 @@
     <ApplicationIcon>icons\arduino_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" Version="4.7.0" />
+  </ItemGroup>
+
 </Project>
