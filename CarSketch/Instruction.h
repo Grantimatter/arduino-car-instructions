@@ -20,8 +20,6 @@ class Instruction
       backward
     };
 
-    
-
     Instruction(DriveType driveType, int time, int drivMotorPower, int passMotorPower, int delayAfterStop = 0)
     {
       dt = driveType;
