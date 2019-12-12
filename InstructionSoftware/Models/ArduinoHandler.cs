@@ -41,6 +41,11 @@ namespace InstructionSoftware.Models
             boardList.Add("LilyPad Arduino USB",                "arduino:avr:LilyPadUSB");
             boardList.Add("Linino One",                         "arduino:avr:one");
 
+            PopulateComboBoxes();
+        }
+
+        private static void PopulateComboBoxes()
+        {
             FillBoardComboBox();
             GetPorts();
         }
@@ -48,15 +53,20 @@ namespace InstructionSoftware.Models
         public static void FillBoardComboBox()
         {
             ComboBox boardBox = MainWindow.Instance.boardComboBox;
+            SerialPort serialPort = new SerialPort();
+            //serialPort.
+            //boardBox.
+            boardBox.Items.Clear();
+            boardBox.ItemsSource = boardList.Keys;
 
-            //string[] boards = boardList.Keys.ToString();
-
+            /*
             foreach (var s in boardList)
             {
                 ComboBoxItem board = new ComboBoxItem();
                 board.Content = s.Key;
                 boardBox.Items.Add(board.Content);
             }
+            */
         }
 
         public static void GetPorts()
@@ -64,20 +74,14 @@ namespace InstructionSoftware.Models
             ComboBox portsComboBox = MainWindow.Instance.serialComboBox;
             string[] ports = SerialPort.GetPortNames();
 
-            portsComboBox.ItemsSource = ports;
+            portsComboBox.Items.Clear();
+            //portsComboBox.ItemsSource = ports;
 
-            /*
-            foreach (string item in ports)
+            
+            foreach (string port in ports)
             {
-                MessageBox.Show(item);
-                portsComboBox.Items.Add(item);
+                portsComboBox.Items.Add(port);
             }
-
-            for (int i = 0; i < ports.Length; i++)
-            {
-                portsComboBox.Items.Add(ports[i]);
-            }
-            */
         }
 
         public static string GetBoard(string ardBoardName)

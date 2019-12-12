@@ -19,6 +19,7 @@ namespace InstructionSoftware.ViewModels
         public VerifyProgramCommand VerifyProgramCommand { get; private set; }
         public ConsoleInputCommand ConsoleInputCommand { get; private set; }
         public ArduinoHandler ArduinoHandler { get; private set; }
+        public SaveFileCommand SaveFileCommand { get; private set; }
 
         public static List<InstructionBlock> InstructionBlocks = new List<InstructionBlock>();
 
@@ -30,7 +31,13 @@ namespace InstructionSoftware.ViewModels
             VerifyProgramCommand = new VerifyProgramCommand(VerifyProgram);
             ConsoleInputCommand = new ConsoleInputCommand(ConsoleInput);
             ArduinoHandler = new ArduinoHandler();
+            SaveFileCommand = new SaveFileCommand(SaveFile);
             ibm = new InstructionBlockModel();
+        }
+
+        private void SaveFile(string filePath)
+        {
+            SaveProgram.SaveProgramToFile();
         }
 
         private void ConsoleInput(string obj)
