@@ -1,12 +1,8 @@
 ﻿using InstructionSoftware.User_Controls;
 using InstructionSoftware.ViewModels.Commands;
 using InstructionSoftware.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace InstructionSoftware.ViewModels
 {
@@ -40,7 +36,7 @@ namespace InstructionSoftware.ViewModels
 
         private void VerifyProgram()
         {
-            Models.Verify.VerifyProgram();
+            Verify.VerifyProgram();
         }
 
         public void AddInstruction()
@@ -48,7 +44,7 @@ namespace InstructionSoftware.ViewModels
             InstructionBlockModel.AddDefaultInstruction();
         }
 
-        public void AddInstruction(User_Controls.InstructionBlock ib)
+        public void AddInstruction(InstructionBlock ib)
         {
             InstructionBlockModel.AddInstruction(ib);
         }
