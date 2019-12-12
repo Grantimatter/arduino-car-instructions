@@ -35,7 +35,7 @@
                         <MenuItem Header="_Instruction" Command="{Binding AddInstructionCommand}"/>
                     </MenuItem>
                     <MenuItem Header="_Open"/>
-                    <MenuItem Header="_Save">
+                    <MenuItem Header="_Save" Command="{Binding SaveFileCommand}">
                         <MenuItem.Icon>
                             <Image Source="/icons/save2.png"/>
                         </MenuItem.Icon>
@@ -111,7 +111,7 @@
 
                     <DockPanel DockPanel.Dock="Left" ToolTip="The PWM pin to control analog signal to the passenger side motor">
                         <Label Content="PWM:" HorizontalAlignment="Left"/>
-                        <TextBox x:Name="passPWM" DockPanel.Dock="Right" VerticalAlignment="Center" Text="8" Width="19"/>
+                        <TextBox x:Name="passPWM" DockPanel.Dock="Right" VerticalAlignment="Center" Text="7" Width="19"/>
                     </DockPanel>
                     <Rectangle Fill="LightGray" Width="2" VerticalAlignment="Stretch" Margin="5,2,0,2"/>
 
