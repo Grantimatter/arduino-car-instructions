@@ -73,6 +73,7 @@ namespace InstructionSoftware.Models
         {
             ComboBox portsComboBox = MainWindow.Instance.serialComboBox;
             string[] ports = SerialPort.GetPortNames();
+            SerialPort serialPort = new SerialPort(ports[0]);
 
             portsComboBox.Items.Clear();
             //portsComboBox.ItemsSource = ports;

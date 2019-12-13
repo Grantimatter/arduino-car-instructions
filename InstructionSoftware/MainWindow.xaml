@@ -25,8 +25,8 @@
         </Grid.RowDefinitions>
 
         <StatusBar Grid.Row="5" Grid.ColumnSpan="5" Height="20" VerticalAlignment="Bottom" MaxHeight="20" MinHeight="20">
-            <StatusBarItem Content="filename.car" HorizontalAlignment="Left"/>
-            <StatusBarItem Content="Last saved 0 Minutes ago" HorizontalAlignment="Right"/>
+            <StatusBarItem x:Name="fileNameLabel" HorizontalAlignment="Left"/>
+            <StatusBarItem x:Name="lastSavedLabel" HorizontalAlignment="Right"/>
         </StatusBar>
         <DockPanel Grid.ColumnSpan="5" Margin="0,0,0,0" Grid.RowSpan="1" VerticalAlignment="Top" MinHeight="20" MaxHeight="20" Height="20">
             <Menu DockPanel.Dock="Top" Height="20" Margin="0,0,0,0" VerticalAlignment="Top" MinHeight="20" MaxHeight="20">
@@ -34,7 +34,7 @@
                     <MenuItem Header="_New">
                         <MenuItem Header="_Instruction" Command="{Binding AddInstructionCommand}"/>
                     </MenuItem>
-                    <MenuItem Header="_Open"/>
+                    <MenuItem Header="_Open" Command="{Binding LoadProgramCommand}"/>
                     <MenuItem Header="_Save" Command="{Binding SaveFileCommand}">
                         <MenuItem.Icon>
                             <Image Source="/icons/save2.png"/>

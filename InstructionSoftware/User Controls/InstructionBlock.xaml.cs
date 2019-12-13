@@ -16,7 +16,7 @@ namespace InstructionSoftware.User_Controls
             this.DataContext = this;
             RemoveInstructionCommand = new RemoveInstructionCommand(RemoveInstruction);
             removeButton.CommandParameter = this;
-            dtComboBox.ItemsSource = Enum.GetValues(typeof(Instruction.DriveType)).ToString();
+            dtComboBox.ItemsSource = Enum.GetValues(typeof(Instruction.DriveType));
         }
 
         private void RemoveInstruction(InstructionBlock ib)

@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 using InstructionSoftware.ViewModels;
 
 namespace InstructionSoftware.Models
 {
+    [Serializable]
     public class Instruction
     {
         int t, dmp, pmp, das;
         DriveType dt;
+
+        Instruction() { }
 
         Instruction(DriveType driveType, int time, int drivMotorPower, int passMotorPower, int delayAfterStop)
         {
@@ -35,9 +39,12 @@ namespace InstructionSoftware.Models
                 ins.Add(newIns);
             }
 
+            MessageBox.Show("Instruction 1: " + ins[0]);
+
             return ins;
         }
 
+        [Serializable]
         public enum DriveType
         {
             forward,

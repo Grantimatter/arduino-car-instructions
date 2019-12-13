@@ -4,6 +4,7 @@ using System.Text;
 
 namespace InstructionSoftware.Models
 {
+    [Serializable]
     public class Program
     {
         public string programName, filePath;

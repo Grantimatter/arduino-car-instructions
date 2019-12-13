@@ -24,7 +24,7 @@ namespace InstructionSoftware.Models
             ardOut.Owner = MainWindow.Instance;
             ardOut.Show();
 
-            string args = "/k arduino-cli compile -b arduino:avr:uno CarSketch";
+            string args = "/k arduino-cli upload -p " + (string)MainWindow.Instance.serialComboBox.SelectedItem + " -t -b arduino:avr:uno CarSketch";
 
             StartProcess("cmd.exe", args);
             ardOut.ouputTextBox.Text = StdOut;
